@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
-    <TargetFrameworks>net45;net462;netcoreapp3.0;net5.0-windows10.0.18362.0</TargetFrameworks>
+    <TargetFrameworks>net8.0-windows10.0.26100.0</TargetFrameworks>
     <UseWPF>true</UseWPF>
     <NeutralLanguage>en-US</NeutralLanguage>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -35,6 +35,10 @@
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
       <CustomToolNamespace>ModernWpf</CustomToolNamespace>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="Nerdbank.GitVersioning" Version="3.6.143" />
   </ItemGroup>
 
 </Project>

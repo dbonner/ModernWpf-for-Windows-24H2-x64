@@ -32,7 +32,8 @@
         GlassFrameThickness="0,1,0,0"
         UseAeroCaptionButtons="False" />
 
-    <Style x:Key="BaseWindowStyle" TargetType="Window">
+    <Style x:Key="DefaultWindowStyle" TargetType="Window">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="Foreground" Value="{DynamicResource SystemControlPageTextBaseHighBrush}" />
         <Setter Property="Background" Value="{DynamicResource SystemControlPageBackgroundAltHighBrush}" />
         <Setter Property="BorderBrush" Value="{DynamicResource WindowBorder}" />
@@ -59,6 +60,9 @@
                         Padding="{TemplateBinding Padding}"
                         SnapsToDevicePixels="True">
                         <Grid>
+                            <Grid.Background>
+                                <SolidColorBrush Color="{DynamicResource MicaPrimaryColor}" Opacity="{DynamicResource MicaOpacity}" />
+                            </Grid.Background>
                             <Grid x:Name="ContentGrid">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto" />
@@ -144,10 +148,6 @@
                 <Setter Property="primitives:WindowHelper.FixMaximizedWindow" Value="False" />
             </Trigger>
         </Style.Triggers>
-    </Style>
-
-    <Style x:Key="DefaultWindowStyle" TargetType="Window" BasedOn="{StaticResource BaseWindowStyle}">
-        <Setter Property="OverridesDefaultStyle" Value="True" />
     </Style>
 
     <Style TargetType="Window" BasedOn="{StaticResource DefaultWindowStyle}" />
